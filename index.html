@@ -1,7 +1,151 @@
-<html>
-  <body>
-    <div style='margin:'auto'>
-    <h1>Under constructing, go to <a href='http://daizack.tk'>daizack.tk</a> to view my site </h1>
-      </div>
-  </body>
-  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zack Dai — Senior Data Scientist | Entity Resolution & Company Matching</title>
+<meta name="description" content="Zack Dai is a Senior Data Scientist at Coface in Canada, building global entity-resolution and company-matching systems covering 250M companies from 50+ sources.">
+<style>
+  :root{
+    --ink:#14202b; --muted:#5b6b7a; --accent:#0b5a8a; --accent2:#0e7a5f;
+    --bg:#f7f9fb; --card:#ffffff; --line:#e2eaf0; --chip:#eef4f8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px 64px}
+  header{padding:64px 0 28px;text-align:left}
+  .avatar{width:96px;height:96px;border-radius:50%;border:3px solid #fff;box-shadow:0 4px 18px rgba(11,53,86,.18);margin-bottom:18px}
+  h1{font-size:42px;line-height:1.1;letter-spacing:-.5px}
+  .headline{font-size:19px;color:var(--accent);font-weight:600;margin-top:8px}
+  .location{color:var(--muted);margin-top:6px;font-size:15px}
+  .intro{font-size:17px;margin-top:18px;max-width:720px}
+  .cta{margin-top:22px;display:flex;gap:10px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:10px 18px;border-radius:999px;font-weight:600;font-size:15px;border:1px solid var(--accent)}
+  .btn.primary{background:var(--accent);color:#fff}
+  .btn.primary:hover{background:#084a73;text-decoration:none}
+  .btn.ghost{color:var(--accent);background:#fff}
+  .btn.ghost:hover{text-decoration:none;background:var(--chip)}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:30px 0 6px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center}
+  .stat .num{font-size:28px;font-weight:800;color:var(--accent);line-height:1.1}
+  .stat .label{font-size:13.5px;color:var(--muted);margin-top:4px}
+  section{margin-top:38px}
+  h2{font-size:15px;text-transform:uppercase;letter-spacing:1.6px;color:var(--accent2);border-bottom:2px solid var(--line);padding-bottom:8px;margin-bottom:18px}
+  .job{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-bottom:14px}
+  .job-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+  .job-title{font-weight:700;font-size:17px}
+  .job-date{color:var(--muted);font-size:14px;font-weight:600;white-space:nowrap}
+  .job-sub{color:var(--muted);font-size:14.5px;margin:2px 0 8px}
+  .job ul{margin-left:18px}
+  .job li{margin-bottom:5px;font-size:15.5px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{background:var(--chip);border:1px solid var(--line);padding:6px 12px;border-radius:999px;font-size:14px;font-weight:500}
+  .project{border-color:#cfe3d9;background:linear-gradient(180deg,#ffffff,#f4faf7)}
+  .project .links{margin-top:10px;display:flex;gap:14px;flex-wrap:wrap;font-weight:600;font-size:15px}
+  .edu{display:grid;grid-template-columns:1fr auto;gap:4px 16px;font-size:15.5px}
+  .edu .date{color:var(--muted);font-weight:600;font-size:14px;text-align:right}
+  footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:14px;text-align:center}
+  @media(max-width:640px){h1{font-size:34px}.stats{grid-template-columns:1fr}.edu{grid-template-columns:1fr}.edu .date{text-align:left}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <img class="avatar" src="https://avatars.githubusercontent.com/u/45176371?v=4" alt="Zack Dai">
+  <h1>Zack Dai</h1>
+  <p class="headline">Senior Data Scientist — Entity Resolution &amp; Company Matching | Global Credit Data</p>
+  <p class="location">📍 St. Catharines, Ontario, Canada · Remote · Canada</p>
+  <p class="intro">I design and build entity-resolution systems that turn messy company data into reliable credit data. At Coface, I own a global company-matching system covering <strong>250M companies</strong> from <strong>50+ sources</strong>, using Python, Elasticsearch, BERT and DuckDB.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://www.linkedin.com/in/zhengang-dai/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+    <a class="btn ghost" href="https://github.com/DaiZack" target="_blank" rel="noopener">GitHub — @DaiZack</a>
+    <a class="btn ghost" href="#project">See FolderLake ↓</a>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="num">250M</div><div class="label">Companies covered by the matching system I build &amp; own</div></div>
+    <div class="stat"><div class="num">50+</div><div class="label">Data sources cross-matched, via API &amp; batch</div></div>
+    <div class="stat"><div class="num">27 → 6 days</div><div class="label">U.S. full-index match time after distributed scheduling</div></div>
+  </div>
+</header>
+
+<section>
+  <h2>Experience</h2>
+
+  <div class="job">
+    <div class="job-head"><span class="job-title">Senior Data Scientist — Coface</span><span class="job-date">Mar 2023 – Present</span></div>
+    <p class="job-sub">Trade credit insurance · Remote, Canada</p>
+    <ul>
+      <li>Build and own a global company-matching system covering 250M companies from 50+ sources, via API and batch file matching.</li>
+      <li>Designed a hybrid pipeline: Oracle export → normalization → Elasticsearch indexing; staged retrieval (exact, then fuzzy), BERT scoring on name and address, and rule-based ranking.</li>
+      <li>Built index-to-index matching across global sources from scratch.</li>
+      <li>Cut the U.S. full-index match from 27 days to 6 days with producer–worker distributed scheduling on Kubernetes; production stack includes RabbitMQ and GitLab CI/CD, with automated deployment, monitoring and human-in-the-loop review.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head"><span class="job-title">Analytics Lead — Delta4 Digital</span><span class="job-date">Jun 2022 – Mar 2023</span></div>
+    <ul><li>Led analytics delivery, translating business requirements into data and analytics solutions.</li></ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head"><span class="job-title">Analytics Lead / Data Scientist — rel8ed.to</span><span class="job-date">Oct 2018 – Jun 2022</span></div>
+    <p class="job-sub">Credit-data products · Data Scientist 2018–2021, Analytics Lead 2021–2022</p>
+    <ul><li>Built data science solutions for credit-data products, including company data enrichment and analysis.</li></ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head"><span class="job-title">Research &amp; Teaching Assistant (Part-time) — Brock University</span><span class="job-date">2018 – 2026</span></div>
+    <ul><li>Research and teaching support in business analytics and machine learning.</li></ul>
+  </div>
+</section>
+
+<section id="project">
+  <h2>Featured Project</h2>
+  <div class="job project">
+    <div class="job-head"><span class="job-title">FolderLake — a personal data lake over your own folders</span><span class="job-date">Open Source · MIT</span></div>
+    <p style="font-size:15.5px">FolderLake catalogs files <em>in place</em> with DuckDB — no copying, no uploading. For each file it extracts topic tags, a one-line summary and key entities (TF-IDF / NLP pipeline + LLM tier), then links files into a graph by topic similarity, shared entities and references, so you can find anything by type and topic in seconds. Ships with a local web app, an MCP interface, PyPI package and desktop apps.</p>
+    <div class="links">
+      <a href="https://github.com/DaiZack/FolderLake" target="_blank" rel="noopener">GitHub Repo →</a>
+      <a href="https://daizack.github.io/FolderLake/" target="_blank" rel="noopener">Live Demo →</a>
+      <a href="https://www.youtube.com/watch?v=_V5jvjMjizg" target="_blank" rel="noopener">Watch (45s) →</a>
+      <a href="https://pypi.org/project/folderlake/" target="_blank" rel="noopener">PyPI →</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Core Skills</h2>
+  <div class="chips">
+    <span class="chip">Python</span><span class="chip">Entity Resolution</span><span class="chip">Elasticsearch</span>
+    <span class="chip">BERT / NLP</span><span class="chip">Machine Learning</span><span class="chip">Deep Learning</span>
+    <span class="chip">DuckDB</span><span class="chip">SQL / Oracle</span><span class="chip">Kubernetes</span>
+    <span class="chip">RabbitMQ</span><span class="chip">GitLab CI/CD</span><span class="chip">AWS</span>
+    <span class="chip">MongoDB</span><span class="chip">SAS / R</span>
+  </div>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <div class="edu">
+    <span><strong>Master’s, Business Analytics (Machine Learning)</strong> — Brock University · Grade A+</span><span class="date">2016 – 2018</span>
+    <span><strong>Machine Learning</strong> — Stanford University (online)</span><span class="date">2019 – 2020</span>
+    <span><strong>Master’s, Public Administration</strong> — Central China Normal University</span><span class="date">2011 – 2013</span>
+    <span><strong>Bachelor’s, Human Resources Management</strong> — Central China Normal University</span><span class="date">2002 – 2006</span>
+  </div>
+</section>
+
+<section>
+  <h2>Open To</h2>
+  <p style="font-size:15.5px">Senior / Staff Data Scientist roles in entity resolution, master data and KYC — remote in Canada, or hybrid in Toronto. The best way to reach me is through <a href="https://www.linkedin.com/in/zhengang-dai/" target="_blank" rel="noopener">LinkedIn</a>.</p>
+</section>
+
+<footer>
+  © 2026 Zack Dai · St. Catharines, Canada · <a href="https://github.com/DaiZack">GitHub</a> · <a href="https://www.linkedin.com/in/zhengang-dai/">LinkedIn</a>
+</footer>
+
+</div>
+</body>
+</html>
