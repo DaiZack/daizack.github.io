@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zack Dai — Resume</title>
+<style>
+  body{font-family:-apple-system,"Segoe UI",Arial,sans-serif;color:#1c2b3a;font-size:10.2pt;line-height:1.45;max-width:760px;margin:0 auto;padding:28px 22px 40px}
+  a{color:#0b5a8a;text-decoration:none}
+  .bar{display:flex;gap:10px;margin-bottom:22px}
+  .bar button,.bar a{border:1.5px solid #0b5a8a;border-radius:8px;padding:8px 16px;font-weight:700;font-size:13px;background:#0b5a8a;color:#fff;cursor:pointer}
+  .bar a{background:#fff;color:#0b5a8a}
+  header{text-align:center;border-bottom:2.2pt solid #0b3556;padding-bottom:9pt;margin-bottom:10pt}
+  h1{font-size:23pt;color:#0b3556;margin:0;letter-spacing:.4pt}
+  .head{font-size:10.5pt;font-weight:600;margin:3pt 0}
+  .contact{font-size:8.8pt;color:#44566a}
+  h2{font-size:9.8pt;text-transform:uppercase;letter-spacing:1.1pt;color:#0b3556;border-bottom:.7pt solid #c9d6e0;padding-bottom:2.5pt;margin:12pt 0 6pt}
+  .job{margin-bottom:8pt}
+  .jh{display:flex;justify-content:space-between;align-items:baseline}
+  .jt{font-weight:700;font-size:10.4pt}
+  .jd{font-size:8.8pt;color:#44566a;font-weight:600;white-space:nowrap}
+  .js{font-size:9pt;color:#44566a;font-style:italic}
+  ul{margin:2pt 0 2pt 14pt;padding:0} li{margin-bottom:2.2pt}
+  .edu{display:flex;justify-content:space-between;margin-bottom:3pt}
+  .edu .d{color:#44566a;font-size:8.8pt;font-weight:600}
+  p{margin:2pt 0}
+  @media print{ .bar{display:none} body{padding:0} @page{size:Letter;margin:.55in .6in} }
+</style>
+</head>
+<body>
+<div class="bar">
+  <button onclick="window.print()">⬇ Download PDF (Print → Save as PDF)</button>
+  <a href="index.html">← Back to homepage</a>
+</div>
+
+<header>
+  <h1>ZACK DAI</h1>
+  <p class="head">Senior Data Scientist — Entity Resolution &amp; Company Matching | Global Credit Data</p>
+  <p class="contact">St. Catharines, Ontario, Canada · Remote · Canada · dzhengang@gmail.com<br>LinkedIn: linkedin.com/in/zhengang-dai · GitHub: github.com/DaiZack</p>
+</header>
+
+<h2>Professional Summary</h2>
+<p>Senior Data Scientist at Coface (since March 2023) specializing in entity resolution, company matching, and data enrichment at global scale. I design and build production matching systems that turn messy, multi-source company data into reliable credit data for underwriting and risk decisions. Previously Analytics Lead at rel8ed.to and Delta4 Digital. Core strengths: large-scale matching pipelines, Elasticsearch retrieval, BERT-based scoring, and distributed data engineering in Python.</p>
+
+<h2>Experience</h2>
+<div class="job">
+  <div class="jh"><span class="jt">Senior Data Scientist — Coface</span><span class="jd">Mar 2023 – Present</span></div>
+  <p class="js">Trade credit insurance · Remote, Canada</p>
+  <ul>
+    <li>Own and build a <strong>global company-matching system covering 250M companies from 50+ sources</strong>, delivered via API and high-volume batch matching.</li>
+    <li>Designed a hybrid matching pipeline: Oracle export → normalization → Elasticsearch indexing; staged retrieval (exact, then fuzzy), <strong>BERT scoring on company name and address</strong>, and rule-based ranking with full cross-matching across sources.</li>
+    <li><strong>Built index-to-index matching from scratch</strong> across global sources.</li>
+    <li>Cut U.S. full-index matching time from <strong>27 days to 6 days</strong> by designing producer–worker distributed scheduling across multiple hosts.</li>
+    <li>Productionized with <strong>RabbitMQ, Kubernetes, and GitLab CI/CD</strong> — automated deployment, monitoring, scaling, real-time error correction, and automated human-in-the-loop review. Core stack: Python (DuckDB), Elasticsearch, Oracle.</li>
+  </ul>
+</div>
+<div class="job">
+  <div class="jh"><span class="jt">Analytics Lead — Delta4 Digital Inc.</span><span class="jd">Jun 2022 – Mar 2023</span></div>
+  <ul><li>Led analytics delivery and stakeholder work, translating business requirements into data and analytics solutions.</li></ul>
+</div>
+<div class="job">
+  <div class="jh"><span class="jt">Analytics Lead / Data Scientist — rel8ed.to</span><span class="jd">Oct 2018 – Jun 2022</span></div>
+  <p class="js">Credit-data products · Data Scientist 2018–2021; Analytics Lead 2021–2022</p>
+  <ul>
+    <li>Built data science and analytics solutions for credit-data products, including company data enrichment and analysis for business customers.</li>
+    <li>Progressed from Data Scientist to Analytics Lead, taking on delivery leadership alongside hands-on modelling and analysis.</li>
+  </ul>
+</div>
+<div class="job">
+  <div class="jh"><span class="jt">Research Assistant &amp; Teaching Assistant (Part-time) — Brock University</span><span class="jd">2018 – Nov 2026</span></div>
+  <ul><li>Research and teaching support in business analytics and machine learning, alongside full-time industry roles.</li></ul>
+</div>
+<div class="job">
+  <div class="jh"><span class="jt">Business Analyst — Yahgee</span><span class="jd">Jun 2006 – May 2016</span></div>
+  <ul><li>Business analysis experience prior to graduate studies in Canada.</li></ul>
+</div>
+
+<h2>Selected Project</h2>
+<div class="job">
+  <div class="jh"><span class="jt">FolderLake — Open Source</span><span class="jd">2026</span></div>
+  <p class="js">github.com/DaiZack/FolderLake · Published on PyPI · Live demo available</p>
+  <ul><li>Built a personal data lake that catalogs files in place with <strong>DuckDB</strong>: per-file topic extraction (TF-IDF / NLP + LLM tagging, one-line summaries, key entities), graph linking by topic similarity and shared entities, and fast search/filter by type and topic. Includes an MCP interface and a local web app.</li></ul>
+</div>
+
+<h2>Core Skills</h2>
+<p><strong>Data Science &amp; ML:</strong> Entity Resolution, Machine Learning, Deep Learning, NLP, BERT, Data Enrichment</p>
+<p><strong>Languages &amp; Data:</strong> Python, SQL, DuckDB, Oracle, Elasticsearch, MongoDB, SAS, R</p>
+<p><strong>Platform &amp; Engineering:</strong> Kubernetes, RabbitMQ, GitLab CI/CD, AWS, Distributed Scheduling, API &amp; Batch Pipelines</p>
+
+<h2>Education</h2>
+<div class="edu"><span><strong>Master’s, Business Analytics (Machine Learning)</strong> — Brock University · Grade A+</span><span class="d">2016 – 2018</span></div>
+<div class="edu"><span><strong>Machine Learning</strong> — Stanford University (online)</span><span class="d">2019 – 2020</span></div>
+<div class="edu"><span><strong>Master’s, Public Administration</strong> — Central China Normal University</span><span class="d">2011 – 2013</span></div>
+<div class="edu"><span><strong>Bachelor’s, Human Resources Management</strong> — Central China Normal University</span><span class="d">2002 – 2006</span></div>
+
+<p style="margin-top:10pt;text-align:center;color:#44566a;font-size:9pt">Open to Senior / Staff Data Scientist, Entity Resolution / Master Data, and KYC roles — Remote in Canada or Hybrid in Toronto.</p>
+
+<script>if (location.hash === '#print') { window.addEventListener('load', () => setTimeout(() => window.print(), 400)); }</script>
+</body>
+</html>

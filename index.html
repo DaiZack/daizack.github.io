@@ -3,149 +3,371 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zack Dai — I build entity-resolution systems</title>
-<meta name="description" content="Hi, I'm Zack Dai. I build entity-resolution and company-matching systems at Coface — 250M companies, 50+ sources. I also build FolderLake, an open-source DuckDB data lake.">
+<title>Zack Dai | Senior Data Scientist — Entity Resolution & Company Matching</title>
+<meta name="description" content="Zack Dai is a Senior Data Scientist at Coface in Canada, building global entity-resolution and company-matching systems covering 250M companies from 50+ sources. Open to Senior / Staff Data Scientist roles, remote Canada or hybrid Toronto.">
 <style>
   :root{
-    --bg:#fdfdfa; --ink:#1c2321; --muted:#6b7672; --accent:#9a3b26; --accent2:#14532d;
-    --line:#e8e6df; --code:#f4f2ec;
-  }
-  @media (prefers-color-scheme: dark){
-    :root{--bg:#16181a; --ink:#e8e6df; --muted:#9aa39e; --accent:#e08a6d; --accent2:#7fc98f; --line:#2c2f31; --code:#212426}
+    --bg:#ffffff; --bg-soft:#f6f8fa; --card:#ffffff; --ink:#0f1f2e; --body:#2e3d4d; --muted:#5b6d7f;
+    --accent:#0b5a8a; --accent-dark:#084a73; --accent-soft:#e8f2f8; --teal:#0e7a5f; --line:#dde6ec; --chip:#eef4f8;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;font-size:18px;line-height:1.65}
-  a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
-  a:hover{color:var(--ink)}
-  .wrap{max-width:700px;margin:0 auto;padding:0 22px 80px}
-  nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;border-bottom:1px solid var(--line);font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13.5px}
-  nav .brand{font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:.3px}
-  nav .links a{color:var(--muted);text-decoration:none;margin-left:18px}
-  nav .links a:hover{color:var(--accent)}
-  header{padding:52px 0 8px}
-  .hi{font-size:15px;font-family:ui-monospace,Menlo,monospace;color:var(--accent2);letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
-  h1{font-size:44px;line-height:1.12;font-weight:700;letter-spacing:-.5px}
-  h1 em{font-style:italic;color:var(--accent)}
-  .lede{margin-top:26px;font-size:19px}
-  .lede li{margin:0 0 14px 22px}
-  .lede li::marker{color:var(--accent)}
-  section{margin-top:54px}
-  h2{font-family:ui-monospace,Menlo,monospace;font-size:13.5px;text-transform:uppercase;letter-spacing:2px;color:var(--muted);margin-bottom:20px;display:flex;align-items:center;gap:12px}
-  h2::after{content:"";flex:1;border-top:1px solid var(--line)}
-  p{margin-bottom:14px}
-  .case{background:var(--code);border-radius:10px;padding:26px 28px}
-  .case h3{font-size:22px;line-height:1.3;margin-bottom:6px}
-  .case .meta{font-family:ui-monospace,Menlo,monospace;font-size:13px;color:var(--muted);margin-bottom:16px}
-  .case dl{display:grid;grid-template-columns:86px 1fr;gap:8px 14px;font-size:16.5px}
-  .case dt{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;text-transform:uppercase;letter-spacing:1px;color:var(--accent2);padding-top:4px}
-  .pipeline{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:18px 0 4px;font-family:ui-monospace,Menlo,monospace;font-size:12.5px}
-  .pipeline span{background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:4px 10px;white-space:nowrap}
-  .pipeline i{color:var(--muted);font-style:normal}
-  .list{list-style:none}
-  .list li{display:flex;gap:16px;padding:9px 0;border-bottom:1px dotted var(--line);align-items:baseline}
-  .list li:last-child{border-bottom:none}
-  .date{font-family:ui-monospace,Menlo,monospace;font-size:13.5px;color:var(--muted);white-space:nowrap;min-width:86px}
-  .list .t{flex:1}
-  .list .t small{display:block;color:var(--muted);font-size:15px;line-height:1.45}
-  .exp li{display:flex;gap:16px;padding:7px 0;align-items:baseline}
-  .now{border-left:3px solid var(--accent2);padding-left:18px}
-  .now p{margin-bottom:8px}
-  footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);font-family:ui-monospace,Menlo,monospace;font-size:13px;color:var(--muted);text-align:center;line-height:1.9}
-  footer a{color:var(--muted)}
-  @media(max-width:640px){h1{font-size:34px}body{font-size:17px}.case dl{grid-template-columns:1fr}.case dt{padding-top:10px}.list li,.exp li{flex-direction:column;gap:2px}}
+  body{background:var(--bg);color:var(--body);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-size:16.5px;line-height:1.65}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .in{max-width:1120px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center}
+  .brand{font-weight:800;color:var(--ink);font-size:18px;letter-spacing:.2px}
+  .brand span{color:var(--accent)}
+  nav .links a{color:var(--body);margin-left:22px;font-size:15px;font-weight:500}
+  nav .links a:hover{color:var(--accent);text-decoration:none}
+  nav .cta{background:var(--ink);color:#fff !important;padding:8px 16px;border-radius:8px}
+  /* HERO */
+  .hero{text-align:center;padding:84px 0 64px;background:linear-gradient(180deg,#f2f7fb 0%,#ffffff 100%)}
+  .pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 16px;font-size:14px;font-weight:600;color:var(--ink);box-shadow:0 1px 4px rgba(15,31,46,.06)}
+  .pill .dot{width:9px;height:9px;border-radius:50%;background:#16a34a}
+  .tagline{margin-top:20px;color:var(--accent);font-weight:700;font-size:17px;min-height:28px}
+  h1{font-size:58px;line-height:1.12;color:var(--ink);letter-spacing:-1px;margin-top:10px}
+  h1 .accent{color:var(--accent);font-style:italic;font-family:Georgia,serif;font-weight:600}
+  .hero p.sub{max-width:760px;margin:20px auto 0;font-size:18px;color:var(--body)}
+  .hero .btns{margin-top:30px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;align-items:center}
+  .btn{display:inline-block;padding:12px 24px;border-radius:10px;font-weight:700;font-size:15.5px;border:1.5px solid var(--accent)}
+  .btn.primary{background:var(--accent);color:#fff}
+  .btn.primary:hover{background:var(--accent-dark);text-decoration:none}
+  .btn.ghost{background:#fff;color:var(--accent)}
+  .btn.ghost:hover{text-decoration:none;background:var(--accent-soft)}
+  .btn.plain{border:none;color:var(--ink);font-weight:600}
+  .socials{margin-top:22px;display:flex;gap:10px;justify-content:center}
+  .socials a{width:42px;height:42px;border:1px solid var(--line);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--ink);background:#fff;font-size:14px}
+  .socials a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+  .scrollhint{margin-top:44px;font-family:ui-monospace,Menlo,monospace;font-size:11.5px;letter-spacing:2.5px;color:var(--muted)}
+  /* SECTIONS */
+  section{padding:64px 0 8px}
+  .eyebrow{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;letter-spacing:2px;text-transform:uppercase;color:var(--teal);font-weight:700}
+  h2{font-size:38px;color:var(--ink);letter-spacing:-.5px;margin:6px 0 28px;line-height:1.2}
+  /* ABOUT */
+  .about{display:grid;grid-template-columns:320px 1fr;gap:36px;align-items:start}
+  .photo-card{border:1px solid var(--line);border-radius:16px;padding:22px;background:var(--bg-soft);text-align:center}
+  .photo-card img{width:150px;height:150px;border-radius:50%;border:4px solid #fff;box-shadow:0 4px 16px rgba(15,31,46,.15)}
+  .fact-chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:16px}
+  .fact-chips span{background:var(--ink);color:#fff;font-family:ui-monospace,Menlo,monospace;font-size:11.5px;padding:5px 10px;border-radius:999px;letter-spacing:.5px}
+  .about h3{font-size:26px;color:var(--ink);margin-bottom:12px}
+  .about p{margin-bottom:12px}
+  .fact-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px;border-top:1px solid var(--line);padding-top:22px}
+  .fact-strip .k{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase}
+  .fact-strip .v{font-weight:700;color:var(--ink);margin-top:3px;font-size:15.5px}
+  /* TIMELINE */
+  .tl{position:relative}
+  .tl-item{display:grid;grid-template-columns:170px 30px 1fr;gap:0 6px;margin-bottom:22px}
+  .tl-date{font-family:ui-monospace,Menlo,monospace;font-size:13px;color:var(--muted);text-align:right;padding-top:20px;line-height:1.5}
+  .tl-line{position:relative}
+  .tl-line::before{content:"";position:absolute;left:50%;top:0;bottom:-22px;width:2px;background:var(--line);transform:translateX(-50%)}
+  .tl-item:last-child .tl-line::before{display:none}
+  .tl-dot{position:absolute;left:50%;top:24px;width:13px;height:13px;border-radius:50%;background:var(--accent);transform:translateX(-50%);border:3px solid #fff;box-shadow:0 0 0 2px var(--accent);z-index:1}
+  .tl-dot.current{background:#16a34a;box-shadow:0 0 0 2px #16a34a}
+  .card{border:1px solid var(--line);border-radius:14px;padding:22px 24px;background:var(--card)}
+  .card h3{font-size:19px;color:var(--ink)}
+  .card .org{color:var(--accent);font-weight:700;font-size:15.5px}
+  .card .meta{font-size:13.5px;color:var(--muted);font-family:ui-monospace,Menlo,monospace;margin:2px 0 8px}
+  .card ul{margin-left:18px}
+  .card li{margin-bottom:4px}
+  .badge{display:inline-block;background:#e7f6ee;color:#14743c;font-size:12px;font-weight:700;padding:2px 9px;border-radius:999px;margin-left:8px;vertical-align:2px}
+  /* SKILLS MARQUEE */
+  .skill-group{margin-bottom:20px}
+  .skill-group .gname{text-align:center;font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+  .marquee{overflow:hidden;white-space:nowrap;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+  .marquee .track{display:inline-block;animation:scroll 36s linear infinite}
+  .marquee:hover .track{animation-play-state:paused}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .chip{display:inline-block;background:var(--chip);border:1px solid var(--line);color:var(--ink);padding:6px 14px;border-radius:999px;font-size:14px;font-weight:500;margin-right:8px}
+  /* PROJECTS */
+  .spotlight{display:grid;grid-template-columns:1fr 1.2fr;border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:22px;background:#fff}
+  .spotlight .diagram{background:var(--accent-soft);padding:28px;display:flex;flex-direction:column;justify-content:center;gap:8px}
+  .spotlight .diagram span{background:#fff;border:1.5px solid var(--accent);color:var(--accent-dark);border-radius:8px;padding:7px 12px;font-family:ui-monospace,Menlo,monospace;font-size:12.5px;font-weight:700;text-align:center}
+  .spotlight .diagram i{text-align:center;color:var(--accent);font-style:normal;line-height:.6}
+  .spotlight .body{padding:28px}
+  .spotlight .body h3{font-size:23px;color:var(--ink);line-height:1.3}
+  .status{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+  .status span{font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;background:#e7f6ee;color:#14743c}
+  .status span.blue{background:var(--accent-soft);color:var(--accent-dark)}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .grid3 .card{display:flex;flex-direction:column}
+  .grid3 .card p{flex:1;font-size:15.5px}
+  .card .links{margin-top:14px;font-weight:700;font-size:14.5px;display:flex;gap:16px}
+  .techs{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px}
+  .techs span{background:var(--chip);border-radius:999px;padding:3px 10px;font-size:12.5px;color:var(--body);font-weight:500}
+  /* FOCUS */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .focus-card h3{margin-bottom:8px}
+  .focus-card ul{margin-left:18px;font-size:15.5px}
+  .focus-card .ask{display:inline-block;margin-top:12px;font-weight:700}
+  /* STATS */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:center}
+  .stat .num{font-family:ui-monospace,Menlo,monospace;font-size:40px;font-weight:800;color:var(--accent);line-height:1.1}
+  .stat .lab{font-size:12.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-top:5px;font-weight:600}
+  /* NEWS LIST */
+  .news{list-style:none}
+  .news li{display:flex;gap:18px;padding:10px 0;border-bottom:1px dotted var(--line);align-items:baseline}
+  .news .date{font-family:ui-monospace,Menlo,monospace;font-size:13.5px;color:var(--muted);min-width:92px}
+  .news small{display:block;color:var(--muted);font-size:14.5px}
+  /* CONTACT */
+  .contact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .contact-cards .card{text-align:center;padding:26px 18px}
+  .contact-cards .k{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase}
+  .contact-cards .v{font-weight:800;color:var(--ink);font-size:17px;margin-top:5px}
+  footer{margin-top:72px;border-top:1px solid var(--line);background:var(--bg-soft)}
+  footer .in{max-width:1120px;margin:0 auto;padding:34px 24px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:14.5px;color:var(--muted)}
+  footer b{color:var(--ink)}
+  footer a{color:var(--body)}
+  @media(max-width:860px){
+    h1{font-size:38px} h2{font-size:30px}
+    .about{grid-template-columns:1fr}.fact-strip{grid-template-columns:1fr 1fr}
+    .tl-item{grid-template-columns:1fr}.tl-line{display:none}.tl-date{text-align:left;padding-top:0}
+    .spotlight,.grid2,.grid3,.contact-cards{grid-template-columns:1fr}
+    .stats{grid-template-columns:1fr 1fr}
+    nav .links a{margin-left:13px}
+  }
 </style>
 </head>
 <body>
+
+<nav><div class="in">
+  <a class="brand" href="#">Zack<span>.</span>Dai</a>
+  <span class="links">
+    <a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#focus">Focus</a><a href="resume.html">Resume</a>
+    <a class="cta" href="#contact">Contact Me</a>
+  </span>
+</div></nav>
+
+<div class="hero"><div class="wrap">
+  <span class="pill"><span class="dot"></span> Senior Data Scientist @ Coface · Open to Senior / Staff roles</span>
+  <p class="tagline" id="tagline">250M companies. 50+ sources. One matching system.</p>
+  <h1>Hi, I’m Zack Dai.<br>I build <span class="accent">entity-resolution</span> systems that scale.</h1>
+  <p class="sub">Senior Data Scientist at Coface, building and owning a global company-matching system for trade credit insurance — turning messy, multi-source company data into reliable credit data, with Python, Elasticsearch, BERT and DuckDB.</p>
+  <div class="btns">
+    <a class="btn primary" href="#projects">See projects ↘</a>
+    <a class="btn ghost" href="resume.html">📄 Read CV</a>
+    <a class="btn plain" href="resume.html#print">⬇ Download PDF</a>
+  </div>
+  <div class="socials">
+    <a href="https://www.linkedin.com/in/zhengang-dai/" title="LinkedIn">in</a>
+    <a href="https://github.com/DaiZack" title="GitHub">GH</a>
+    <a href="https://daizack.github.io/FolderLake/" title="FolderLake live demo">FL</a>
+  </div>
+  <p class="scrollhint">SCROLL ↓</p>
+</div></div>
+
 <div class="wrap">
 
-<nav>
-  <a class="brand" href="#">ZACK DAI</a>
-  <span class="links"><a href="#work">Work</a><a href="#projects">Projects</a><a href="#writing">Writing &amp; Video</a><a href="#now">Now</a></span>
-</nav>
-
-<header>
-  <p class="hi">Hi, I’m Zack Dai 👋</p>
-  <h1>I build <em>entity-resolution</em> systems that turn messy company data into reliable credit data.</h1>
-  <ul class="lede">
-    <li>I’m a <strong>Senior Data Scientist at <a href="https://www.linkedin.com/in/zhengang-dai/">Coface</a></strong>, where I build and own the global company-matching system — <strong>250M companies, 50+ sources</strong>, served by API and batch.</li>
-    <li>I build <a href="#projects"><strong>FolderLake</strong></a> in the open — a personal data lake that catalogs your own folders with DuckDB, NLP and LLMs. <a href="https://github.com/DaiZack/FolderLake">Code</a> · <a href="https://daizack.github.io/FolderLake/">Live demo</a> · <a href="https://www.youtube.com/watch?v=_V5jvjMjizg">45-second video</a></li>
-    <li>I <a href="#writing">make videos</a> explaining one AI / data idea clearly at a time — someone watching is great, no one watching is fine too.</li>
-  </ul>
-</header>
-
-<section id="work">
-  <h2>Selected Work</h2>
-  <div class="case">
-    <h3>Matching 250 million companies, so underwriters decide on the right entity</h3>
-    <p class="meta">COFACE · SENIOR DATA SCIENTIST · 2023 — NOW · PYTHON · ELASTICSEARCH · BERT · DUCKDB · KUBERNETES</p>
-    <dl>
-      <dt>Problem</dt><dd>The same company appears under dozens of names, addresses and IDs across 50+ sources. Match it wrong, and a credit decision is made on the wrong company.</dd>
-      <dt>Method</dt><dd>A hybrid pipeline I designed and own: staged retrieval first, learned scoring second, rules last — never the other way round.</dd>
-      <dt>Result</dt><dd>Index-to-index matching built from scratch across global sources. The U.S. full-index match went from <strong>27 days to 6 days</strong> after I rebuilt it with producer–worker distributed scheduling.</dd>
-    </dl>
-    <div class="pipeline">
-      <span>Oracle export</span><i>→</i><span>Normalize</span><i>→</i><span>Elasticsearch</span><i>→</i><span>Exact, then fuzzy retrieval</span><i>→</i><span>BERT name + address scoring</span><i>→</i><span>Rule ranking</span><i>→</i><span>API &amp; batch</span>
+<section id="about">
+  <p class="eyebrow">Senior Data Scientist · Entity Resolution</p>
+  <h2>About me</h2>
+  <div class="about">
+    <div class="photo-card">
+      <img src="https://avatars.githubusercontent.com/u/45176371?v=4" alt="Zack Dai">
+      <div class="fact-chips"><span>250M COMPANIES</span><span>50+ SOURCES</span><span>27 → 6 DAYS</span></div>
     </div>
-    <p style="font-size:15.5px;color:var(--muted);margin-top:12px">Productionized with RabbitMQ, Kubernetes and GitLab CI/CD — automated deployment, monitoring, scaling, real-time error correction, and a human in the loop where the machine is unsure.</p>
+    <div>
+      <h3>Hi, my name is Zack Dai.</h3>
+      <p>I design and build entity-resolution systems that turn messy company data into reliable credit data. At Coface I own the global company-matching system end to end — the pipeline, the scoring, the distributed batch engine, and the human-in-the-loop review where the machine is unsure.</p>
+      <p>The best work in this field is proprietary, so my public proof is <strong>FolderLake</strong> — an open-source DuckDB data lake I built, published on PyPI, with a live demo and a 45-second video. Same instincts, fully checkable: catalog, link, search.</p>
+      <p>Previously Analytics Lead at rel8ed.to and Delta4 Digital. I also make short explainer videos about AI and data tools — one idea, explained clearly, per video.</p>
+    </div>
   </div>
+  <div class="fact-strip">
+    <div><p class="k">Based in</p><p class="v">St. Catharines, Ontario 🇨🇦</p></div>
+    <div><p class="k">Role</p><p class="v">Senior Data Scientist @ Coface</p></div>
+    <div><p class="k">Education</p><p class="v">Master’s, Brock University (A+)</p></div>
+    <div><p class="k">Languages</p><p class="v">English, Mandarin</p></div>
+  </div>
+</section>
+
+<section id="experience">
+  <p class="eyebrow">Where I’ve worked</p>
+  <h2>Experience</h2>
+  <div class="tl">
+    <div class="tl-item">
+      <div class="tl-date">Mar 2023 — Present<br>Remote, Canada</div><div class="tl-line"><span class="tl-dot current"></span></div>
+      <div class="card"><h3>Senior Data Scientist<span class="badge">● Current role</span></h3><p class="org">Coface — Trade Credit Insurance</p>
+        <ul>
+          <li>Build and own a global company-matching system covering <strong>250M companies from 50+ sources</strong>, via API and high-volume batch.</li>
+          <li>Designed the hybrid pipeline: Oracle export → normalization → Elasticsearch; staged retrieval (exact, then fuzzy), BERT scoring on name and address, rule-based ranking.</li>
+          <li>Built index-to-index matching across global sources from scratch.</li>
+          <li>Cut the U.S. full-index match from <strong>27 days to 6 days</strong> with producer–worker distributed scheduling on Kubernetes (RabbitMQ, GitLab CI/CD).</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">Jun 2022 — Mar 2023</div><div class="tl-line"><span class="tl-dot"></span></div>
+      <div class="card"><h3>Analytics Lead</h3><p class="org">Delta4 Digital Inc.</p>
+        <ul><li>Led analytics delivery, translating business requirements into data and analytics solutions.</li></ul>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">Oct 2018 — Jun 2022</div><div class="tl-line"><span class="tl-dot"></span></div>
+      <div class="card"><h3>Data Scientist → Analytics Lead</h3><p class="org">rel8ed.to — Credit-Data Products</p>
+        <ul><li>Built data science solutions for credit-data products, including company data enrichment and analysis; progressed from Data Scientist to Analytics Lead.</li></ul>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">2018 — 2026<br>Part-time</div><div class="tl-line"><span class="tl-dot"></span></div>
+      <div class="card"><h3>Research &amp; Teaching Assistant</h3><p class="org">Brock University</p>
+        <ul><li>Research and teaching support in business analytics and machine learning, alongside full-time industry roles.</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <p class="eyebrow">Brock · Stanford · CCNU</p>
+  <h2>Education</h2>
+  <div class="tl">
+    <div class="tl-item"><div class="tl-date">2016 — 2018</div><div class="tl-line"><span class="tl-dot"></span></div>
+      <div class="card"><h3>Master’s, Business Analytics (Machine Learning)</h3><p class="org">Brock University</p><p class="meta">GRADE: A+</p></div></div>
+    <div class="tl-item"><div class="tl-date">2019 — 2020</div><div class="tl-line"><span class="tl-dot"></span></div>
+      <div class="card"><h3>Machine Learning</h3><p class="org">Stanford University (online)</p></div></div>
+    <div class="tl-item"><div class="tl-date">2011 — 2013</div><div class="tl-line"><span class="tl-dot"></span></div>
+      <div class="card"><h3>Master’s, Public Administration</h3><p class="org">Central China Normal University</p></div></div>
+    <div class="tl-item"><div class="tl-date">2002 — 2006</div><div class="tl-line"><span class="tl-dot"></span></div>
+      <div class="card"><h3>Bachelor’s, Human Resources Management</h3><p class="org">Central China Normal University</p></div></div>
+  </div>
+</section>
+
+<section id="skills">
+  <p class="eyebrow">What I work with</p>
+  <h2>Skills &amp; Technologies</h2>
+  <div class="skill-group"><p class="gname">Core</p><div class="marquee"><div class="track" data-dup>
+    <span class="chip">Python</span><span class="chip">Entity Resolution</span><span class="chip">Elasticsearch</span><span class="chip">BERT</span><span class="chip">NLP</span><span class="chip">Machine Learning</span><span class="chip">Deep Learning</span><span class="chip">DuckDB</span><span class="chip">SQL</span>
+  </div></div></div>
+  <div class="skill-group"><p class="gname">Data &amp; Platform</p><div class="marquee"><div class="track" data-dup>
+    <span class="chip">Oracle</span><span class="chip">MongoDB</span><span class="chip">Kubernetes</span><span class="chip">RabbitMQ</span><span class="chip">GitLab CI/CD</span><span class="chip">AWS</span><span class="chip">Distributed Scheduling</span><span class="chip">API &amp; Batch Pipelines</span><span class="chip">SAS</span><span class="chip">R</span>
+  </div></div></div>
 </section>
 
 <section id="projects">
-  <h2>Projects</h2>
-  <ul class="list">
-    <li>
-      <span class="date">2026</span>
-      <span class="t"><a href="https://github.com/DaiZack/FolderLake"><strong>FolderLake</strong></a> — point it at a folder, know what’s in it.
-        <small>A DuckDB catalog over files left in place: per-file topics (TF-IDF / NLP + LLM tags), summaries and entities, linked into a graph you can search by type and topic. On <a href="https://pypi.org/project/folderlake/">PyPI</a>, with desktop apps, an MCP interface, and a <a href="https://daizack.github.io/FolderLake/">live demo</a>.</small>
-      </span>
-    </li>
-    <li>
-      <span class="date">2023 —</span>
-      <span class="t"><strong>Global company matching at Coface</strong> — the case study above.
-        <small>Proprietary, so no code — the FolderLake project is where the same instincts (catalog, link, search) are public and checkable.</small>
-      </span>
-    </li>
-  </ul>
-</section>
+  <p class="eyebrow">Projects and case studies</p>
+  <h2>Things I’ve built</h2>
 
-<section id="writing">
-  <h2>Writing &amp; Video</h2>
-  <ul class="list">
-    <li><span class="date">2026-11</span><span class="t"><a href="https://www.youtube.com/watch?v=_V5jvjMjizg">FolderLake — Point it at a folder. Know what’s in it.</a><small>A 45-second live recording of the real app, not a mockup.</small></span></li>
-    <li><span class="date">2026-11</span><span class="t"><a href="https://daizack.github.io/FolderLake/">How the FolderLake demo was made</a><small>193 real files, cataloged through the real pipeline — provenance and limitations stated on the page.</small></span></li>
-    <li><span class="date">ongoing</span><span class="t">Explainer videos on AI agents, coding tools and data ideas<small>Published on my YouTube channel (Zack Dai) and Facebook — one idea, explained clearly, per video.</small></span></li>
-  </ul>
-</section>
+  <div class="spotlight">
+    <div class="diagram">
+      <span>Oracle export</span><i>↓</i><span>Normalize</span><i>↓</i><span>Elasticsearch</span><i>↓</i><span>Exact → fuzzy retrieval</span><i>↓</i><span>BERT scoring</span><i>↓</i><span>Rule ranking</span><i>↓</i><span>API &amp; batch</span>
+    </div>
+    <div class="body">
+      <p class="eyebrow">Spotlight · Case Study · Coface</p>
+      <h3>Matching 250M companies, so underwriters decide on the right entity</h3>
+      <div class="status"><span>● In production</span><span class="blue">Proprietary — case study only</span></div>
+      <p><strong>Problem:</strong> the same company appears under dozens of names, addresses and IDs across 50+ sources; match it wrong and a credit decision lands on the wrong company. <strong>Method:</strong> staged retrieval first, learned scoring second, rules last. <strong>Result:</strong> index-to-index matching built from scratch, and the U.S. full-index run cut from 27 days to 6.</p>
+      <div class="techs"><span>Python</span><span>Elasticsearch</span><span>BERT</span><span>DuckDB</span><span>Kubernetes</span><span>+3</span></div>
+    </div>
+  </div>
 
-<section>
-  <h2>Experience, briefly</h2>
-  <ul class="list exp">
-    <li><span class="date">2023 — now</span><span class="t"><strong>Senior Data Scientist</strong>, Coface — entity resolution &amp; company matching</span></li>
-    <li><span class="date">2022 — 2023</span><span class="t"><strong>Analytics Lead</strong>, Delta4 Digital</span></li>
-    <li><span class="date">2018 — 2022</span><span class="t"><strong>Data Scientist → Analytics Lead</strong>, rel8ed.to — credit-data products</span></li>
-    <li><span class="date">2018 — 2026</span><span class="t"><strong>Research &amp; Teaching Assistant</strong> (part-time), Brock University</span></li>
-    <li><span class="date">2006 — 2016</span><span class="t"><strong>Business Analyst</strong>, Yahgee</span></li>
-  </ul>
-  <p style="margin-top:14px;font-size:16px">Education: Master’s in Business Analytics (Machine Learning), Brock University, Grade A+ · Machine Learning, Stanford (online) · MPA &amp; BBA, Central China Normal University.</p>
-</section>
-
-<section id="now">
-  <h2>Now — November 2026</h2>
-  <div class="now">
-    <p>📍 Living in <strong>St. Catharines, Ontario</strong>, working remotely for Coface.</p>
-    <p>🔗 Focused on matching quality at global scale — and on what production AI workflows can honestly do inside a matching pipeline.</p>
-    <p>🎓 Preparing a Brock University workshop where students build with FolderLake.</p>
-    <p>💬 Open to Senior / Staff Data Scientist roles in entity resolution, master data and KYC — remote in Canada, or hybrid in Toronto. Reach me on <a href="https://www.linkedin.com/in/zhengang-dai/">LinkedIn</a>.</p>
+  <div class="grid3">
+    <div class="card">
+      <p class="meta">2026 · OPEN SOURCE</p><h3>FolderLake</h3>
+      <div class="status"><span>● Live</span><span class="blue">PyPI · MIT</span></div>
+      <p>Point it at a folder, know what’s in it. A DuckDB catalog over files left in place — topic tags, summaries and entities per file, linked into a searchable graph. Local web app + MCP interface.</p>
+      <div class="techs"><span>Python</span><span>DuckDB</span><span>TF-IDF / NLP</span><span>LLM</span><span>MCP</span></div>
+      <p class="links"><a href="https://github.com/DaiZack/FolderLake">Source ↗</a><a href="https://daizack.github.io/FolderLake/">Live demo ↗</a><a href="https://www.youtube.com/watch?v=_V5jvjMjizg">Video ↗</a></p>
+    </div>
+    <div class="card">
+      <p class="meta">ONGOING · VIDEO</p><h3>AI Explainer Videos</h3>
+      <div class="status"><span class="blue">YouTube · Facebook</span></div>
+      <p>Short videos explaining one AI / data idea clearly at a time — AI agents, coding tools, and the FolderLake demo film. Scripted, narrated and produced end to end by me.</p>
+      <div class="techs"><span>Storytelling</span><span>AI Agents</span><span>Video</span></div>
+      <p class="links"><a href="https://www.youtube.com/watch?v=_V5jvjMjizg">Watch one ↗</a></p>
+    </div>
+    <div class="card">
+      <p class="meta">NOV 2026 · TEACHING</p><h3>Brock Workshop — FolderLake</h3>
+      <div class="status"><span class="blue">Brock University</span></div>
+      <p>Invited to run a hands-on workshop at Brock’s Goodman School, where students build with FolderLake — connecting text mining, SQL, systems design and graph thinking in one project.</p>
+      <div class="techs"><span>Teaching</span><span>DuckDB</span><span>Graph</span></div>
+      <p class="links"><a href="https://github.com/DaiZack/FolderLake">Project ↗</a></p>
+    </div>
   </div>
 </section>
 
-<footer>
-  Zack Dai · St. Catharines, Canada<br>
-  <a href="https://www.linkedin.com/in/zhengang-dai/">LinkedIn</a> · <a href="https://github.com/DaiZack">GitHub</a> · <a href="https://github.com/DaiZack/FolderLake">FolderLake</a><br>
-  This site is one HTML file on GitHub Pages — like the sites it learns from, the work is the design.
-</footer>
+<section id="focus">
+  <p class="eyebrow">What I work on</p>
+  <h2>Focus Areas</h2>
+  <div class="grid2">
+    <div class="card focus-card"><h3>Entity Resolution at Scale</h3>
+      <ul><li>Staged retrieval: exact, then fuzzy — never fuzzy first</li><li>BERT scoring on name + address, rules for ranking</li><li>Coverage vs. precision, measured per country and source</li></ul>
+      <a class="ask" href="https://www.linkedin.com/in/zhengang-dai/">Ask me about this →</a></div>
+    <div class="card focus-card"><h3>Data Enrichment &amp; Master Data</h3>
+      <ul><li>Cross-matching 50+ sources into one reliable record</li><li>Messy company data → credit-ready data</li><li>Human-in-the-loop where the machine is unsure</li></ul>
+      <a class="ask" href="https://www.linkedin.com/in/zhengang-dai/">Ask me about this →</a></div>
+    <div class="card focus-card"><h3>Distributed Data Engineering</h3>
+      <ul><li>Producer–worker scheduling across hosts (27 → 6 days)</li><li>Kubernetes, RabbitMQ, GitLab CI/CD in production</li><li>Monitoring, auto-scaling, real-time error correction</li></ul>
+      <a class="ask" href="https://www.linkedin.com/in/zhengang-dai/">Ask me about this →</a></div>
+    <div class="card focus-card"><h3>Production AI Workflows</h3>
+      <ul><li>LLM tagging and summarization in FolderLake</li><li>MCP interfaces for local data tools</li><li>Honest about limits: evals before claims</li></ul>
+      <a class="ask" href="https://www.linkedin.com/in/zhengang-dai/">Ask me about this →</a></div>
+  </div>
+</section>
+
+<section id="stats">
+  <p class="eyebrow">Client work, open source, scale</p>
+  <h2>By the Numbers</h2>
+  <div class="stats">
+    <div class="stat"><p class="num" data-count="250" data-suffix="M">0</p><p class="lab">Companies matched</p></div>
+    <div class="stat"><p class="num" data-count="50" data-suffix="+">0</p><p class="lab">Data sources</p></div>
+    <div class="stat"><p class="num" data-count="6" data-prefix="27 → " data-suffix=" days">0</p><p class="lab">U.S. full-index match time</p></div>
+    <div class="stat"><p class="num" data-count="8" data-suffix="+ yrs">0</p><p class="lab">Data science &amp; analytics lead</p></div>
+  </div>
+</section>
+
+<section id="news">
+  <p class="eyebrow">Newest first</p>
+  <h2>Latest</h2>
+  <ul class="news">
+    <li><span class="date">2026-11</span><span><a href="https://www.youtube.com/watch?v=_V5jvjMjizg"><strong>FolderLake demo video published</strong></a><small>A 45-second live recording of the real app — and embedded in the README.</small></span></li>
+    <li><span class="date">2026-11</span><span><a href="https://github.com/DaiZack/FolderLake"><strong>FolderLake v0.2.2 released</strong></a><small>Local web app, PyPI package, and single-file desktop apps for Windows and macOS.</small></span></li>
+    <li><span class="date">2026-11</span><span><strong>Brock workshop invitation</strong><small>Invited to run a FolderLake workshop for Brock University’s 5P16 course this month.</small></span></li>
+  </ul>
+</section>
+
+<section id="contact">
+  <p class="eyebrow">Send a note or connect</p>
+  <h2>Let’s talk</h2>
+  <p style="max-width:640px;margin-bottom:22px"><strong>Open to:</strong> Senior / Staff Data Scientist roles in entity resolution, master data and KYC — <strong>remote in Canada, or hybrid in Toronto</strong>. The fastest way to reach me is LinkedIn; referrals welcome.</p>
+  <div class="contact-cards">
+    <div class="card"><p class="k">LinkedIn</p><p class="v">zhengang-dai</p><p><a href="https://www.linkedin.com/in/zhengang-dai/">Connect →</a></p></div>
+    <div class="card"><p class="k">GitHub</p><p class="v">@DaiZack</p><p><a href="https://github.com/DaiZack">Follow →</a></p></div>
+    <div class="card"><p class="k">Resume</p><p class="v">CV / PDF</p><p><a href="resume.html">View / download →</a></p></div>
+  </div>
+</section>
 
 </div>
+
+<footer><div class="in">
+  <div><b>Zack Dai</b><br>© 2026 Zack Dai · St. Catharines, Canada<br>Personal work and opinions are my own.</div>
+  <div><b>SITE</b><br><a href="#about">About</a> · <a href="#projects">Projects</a> · <a href="resume.html">Resume</a> · <a href="#contact">Contact</a></div>
+  <div><b>SOCIAL</b><br><a href="https://www.linkedin.com/in/zhengang-dai/">LinkedIn</a> · <a href="https://github.com/DaiZack">GitHub</a> · <a href="https://github.com/DaiZack/FolderLake">FolderLake</a></div>
+</div></footer>
+
+<script>
+  // Rotating tagline (like the reference site)
+  const lines = [
+    "250M companies. 50+ sources. One matching system.",
+    "Exact first, fuzzy second, rules last.",
+    "Messy company data in. Reliable credit data out.",
+    "Builder of FolderLake — point it at a folder, know what's in it."
+  ];
+  let li = 0; const el = document.getElementById('tagline');
+  setInterval(() => { li = (li + 1) % lines.length; el.style.opacity = 0; setTimeout(() => { el.textContent = lines[li]; el.style.opacity = 1; }, 350); }, 3400);
+  el.style.transition = 'opacity .35s';
+  // Duplicate marquee tracks for a seamless loop
+  document.querySelectorAll('[data-dup]').forEach(t => { t.innerHTML += t.innerHTML; });
+  // Count-up stats when visible
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return; io.unobserve(e.target);
+    const end = +e.target.dataset.count, pre = e.target.dataset.prefix || '', suf = e.target.dataset.suffix || '';
+    const t0 = performance.now();
+    (function tick(t){ const p = Math.min((t - t0) / 1100, 1); e.target.textContent = pre + Math.round(end * p) + suf; if (p < 1) requestAnimationFrame(tick); })(t0);
+  }), {threshold: .5});
+  document.querySelectorAll('[data-count]').forEach(n => io.observe(n));
+</script>
 </body>
 </html>
