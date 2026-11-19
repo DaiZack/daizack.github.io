@@ -54,7 +54,7 @@
   <p class="js">Trade credit insurance · Remote, Canada</p>
   <ul>
     <li>Own and build a <strong>global company-matching system covering 250M companies from 50+ sources</strong>, delivered via API and high-volume batch matching.</li>
-    <li>Designed a hybrid matching pipeline: Oracle export → normalization → Elasticsearch indexing; staged retrieval (exact, then fuzzy), <strong>BERT scoring on company name and address</strong>, and rule-based ranking with full cross-matching across sources.</li>
+    <li>Designed a hybrid matching pipeline: Oracle export → normalization → Elasticsearch indexing; staged retrieval (exact, then fuzzy), <strong>BERT (Transformer) scoring on company name and address</strong>, and rule-based ranking with full cross-matching across sources.</li>
     <li><strong>Built index-to-index matching from scratch</strong> across global sources.</li>
     <li>Cut U.S. full-index matching time from <strong>27 days to 6 days</strong> by designing producer–worker distributed scheduling across multiple hosts.</li>
     <li>Lifted the batch auto-match hit rate from ~65% to <strong>80%+</strong>; on the stream feeding manual review (~50 files / ~50K records a day), the gain avoids ≈2,250 hand matches a day — an estimated <strong>CA$1.9M per year</strong> in manual-review cost.</li>
