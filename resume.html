@@ -40,12 +40,12 @@
 </header>
 
 <h2>Professional Summary</h2>
-<p>Senior Data Scientist at Coface (since March 2023) specializing in entity resolution, company matching, and data enrichment at global scale. I design and build production matching systems that turn messy, multi-source company data into reliable credit data for underwriting and risk decisions. Previously Analytics Lead at rel8ed.to and Delta4 Digital. Core strengths: large-scale matching pipelines, Elasticsearch retrieval, BERT-based scoring, and distributed data engineering in Python.</p>
+<p>Senior Data Scientist at Coface (since March 2023) specializing in entity resolution, company matching, and data enrichment at global scale. I design and build production matching systems that turn messy, multi-source company data into reliable credit data for underwriting and risk decisions. Previously Analytics Lead at rel8ed.to and Delta4 Digital.</p>
 
 <h2>Core Skills</h2>
 <p><strong>Data Science &amp; ML:</strong> Entity Resolution, Machine Learning, Deep Learning, Natural Language Processing (NLP), BERT, Data Enrichment</p>
 <p><strong>Languages &amp; Data:</strong> Python, SQL, DuckDB, Oracle, Elasticsearch, MongoDB, SAS, R</p>
-<p><strong>Platform &amp; Engineering:</strong> Kubernetes, RabbitMQ, GitLab CI/CD, AWS, Distributed Scheduling, API &amp; Batch Pipelines, Metabase</p>
+<p><strong>Platform &amp; Engineering:</strong> Kubernetes, RabbitMQ, GitLab CI/CD, Airflow, AWS, Distributed Scheduling, API &amp; Batch Pipelines, Metabase</p>
 
 
 <h2>Experience</h2>
@@ -57,7 +57,8 @@
     <li>Designed a hybrid matching pipeline: Oracle export → normalization → Elasticsearch indexing; staged retrieval (exact, then fuzzy), <strong>BERT scoring on company name and address</strong>, and rule-based ranking with full cross-matching across sources.</li>
     <li><strong>Built index-to-index matching from scratch</strong> across global sources.</li>
     <li>Cut U.S. full-index matching time from <strong>27 days to 6 days</strong> by designing producer–worker distributed scheduling across multiple hosts.</li>
-    <li>Productionized with <strong>RabbitMQ, Kubernetes, and GitLab CI/CD</strong> — automated deployment, monitoring, scaling, real-time error correction, and automated human-in-the-loop review. Core stack: Python (DuckDB), Elasticsearch, Oracle.</li>
+    <li>Lifted the batch auto-match hit rate from ~65% to <strong>80%+</strong> across ~1M records/day; at ~5 minutes per manual match, that removes ≈150K manual matches a day — an estimated <strong>150+ analyst FTE-equivalent</strong> of manual review saved per year.</li>
+    <li>Productionized with <strong>RabbitMQ, Kubernetes, GitLab CI/CD and Airflow</strong> — automated deployment, monitoring, scaling, real-time error correction, and automated human-in-the-loop review. Core stack: Python (DuckDB), Elasticsearch, Oracle.</li>
   </ul>
 </div>
 <div class="job">
@@ -68,7 +69,7 @@
   <div class="jh"><span class="jt">Analytics Lead / Data Scientist — rel8ed.to</span><span class="jd">Oct 2018 – Jun 2022</span></div>
   <p class="js">Credit-data products · Data Scientist 2018–2021; Analytics Lead 2021–2022</p>
   <ul>
-    <li>Built company data collection and enrichment systems for credit-data products, including the Kumiho streaming platform — see Projects.</li>
+    <li>Built company data collection and enrichment systems at rel8ed.to, operator of North America’s largest open business-data repository, including the Kumiho streaming platform — see Projects.</li>
     <li>Progressed from Data Scientist to Analytics Lead, taking on delivery leadership alongside hands-on modelling and analysis.</li>
   </ul>
 </div>
@@ -78,7 +79,7 @@
 </div>
 <div class="job">
   <div class="jh"><span class="jt">Marketing Director (Central China) — Yahgee</span><span class="jd">Jun 2006 – May 2016</span></div>
-  <ul><li>Marketing head for the Central China subsidiary of a listed modular-housing company: led 120 marketing staff across 5 provincial offices — market planning, marketing strategy, and department management — prior to graduate studies in Canada.</li></ul>
+  <ul><li>Marketing head for the Central China subsidiary of a listed modular-housing company: led 120 marketing staff across 5 provincial offices — market planning, marketing strategy, and department management.</li></ul>
 </div>
 
 <h2>Selected Projects</h2>
@@ -98,14 +99,13 @@
 <div class="job">
   <div class="jh"><span class="jt">Kumiho — Automated Data Collection &amp; Enrichment — rel8ed.to</span><span class="jd">2018 – 2022</span></div>
   <p class="js">Work project</p>
-  <ul><li>Fully automated, real-time streaming collection and enrichment of company data: crawlers, <strong>RabbitMQ</strong> and <strong>Neo4j</strong> pipelines over <strong>500+ public sources</strong> — company websites, government open data — plus third-party sources (Yelp, LinkedIn, Twitter).</li></ul>
+  <ul><li>Fully automated, real-time streaming collection and enrichment of company data: crawlers, <strong>RabbitMQ</strong> and <strong>Neo4j</strong> pipelines over <strong>500+ public sources</strong> — company websites, government open data — plus third-party sources (Yelp, LinkedIn, Twitter), serving enterprise clients including <strong>DNB, Equifax and IDC</strong>.</li></ul>
 </div>
 <div class="job">
   <div class="jh"><span class="jt">FolderLake — Open Source</span><span class="jd">2026</span></div>
   <p class="js">github.com/DaiZack/FolderLake · Published on PyPI · Live demo available</p>
   <ul>
-    <li>Designed and built a personal data lake that catalogs files in place with <strong>DuckDB</strong>: per-file topic extraction (TF-IDF / NLP + LLM tagging, summaries, key entities), graph linking, and fast search/filter. Shipped on <strong>PyPI</strong> with desktop apps, a local web app and an <strong>MCP server</strong>; live demo over a 193-file corpus.</li>
-    <li>Invited to run a graduate workshop at <strong>Brock University</strong> (Nov 2026) built around FolderLake as the teaching project.</li>
+    <li>Designed and built a personal data lake that catalogs files in place with <strong>DuckDB</strong>: per-file topic extraction (TF-IDF / NLP + LLM tagging, summaries, key entities), graph linking, and fast search/filter. Shipped on <strong>PyPI</strong> with desktop apps, a local web app and an <strong>MCP server</strong>; live demo over a 193-file corpus. Invited to run a graduate workshop at <strong>Brock University</strong> (Nov 2026) built around FolderLake.</li>
   </ul>
 </div>
 <div class="job">
