@@ -57,7 +57,7 @@
     <li>Designed a hybrid matching pipeline: Oracle export → normalization → Elasticsearch indexing; staged retrieval (exact, then fuzzy), <strong>BERT scoring on company name and address</strong>, and rule-based ranking with full cross-matching across sources.</li>
     <li><strong>Built index-to-index matching from scratch</strong> across global sources.</li>
     <li>Cut U.S. full-index matching time from <strong>27 days to 6 days</strong> by designing producer–worker distributed scheduling across multiple hosts.</li>
-    <li>Lifted the batch auto-match hit rate from ~65% to <strong>80%+</strong> across ~1M records/day; at ~5 minutes per manual match, that removes ≈150K manual matches a day — an estimated <strong>150+ analyst FTE-equivalent</strong> of manual review saved per year.</li>
+    <li>Lifted the batch auto-match hit rate from ~65% to <strong>80%+</strong> across ~1M records/day — ≈150K fewer manual matches a day; counting only the share that would ever be hand-reviewed, an estimated <strong>CA$2M per year</strong> in avoided manual-review cost.</li>
     <li>Productionized with <strong>RabbitMQ, Kubernetes, GitLab CI/CD and Airflow</strong> — automated deployment, monitoring, scaling, real-time error correction, and automated human-in-the-loop review. Core stack: Python (DuckDB), Elasticsearch, Oracle.</li>
   </ul>
 </div>
